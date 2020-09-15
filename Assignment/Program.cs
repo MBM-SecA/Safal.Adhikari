@@ -8,7 +8,7 @@ namespace Assignment
         {
             All all = new All();
             
-            //Sum
+            //Sum (<500 is false and >500 true)
             Console.WriteLine("Enter two integers:");
             int firstNum = int.Parse(Console.ReadLine());
             int secondNum = int.Parse(Console.ReadLine());
