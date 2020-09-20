@@ -36,10 +36,10 @@ namespace AllAboutClasses
         }
 
         //Finalizer or Destructor
-        ¬Country()
+       /* ¬Country()
         {
             Consloe.Writeline("I'm dying...");
-        }
+        }*/
 
     }
 
