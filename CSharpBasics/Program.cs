@@ -6,6 +6,7 @@ public class Program
     {
         var square = new Square(34.5);
         square.Display();
+        square.GetDiagonal();
 
         var rectangle = new Rectangle(34.5, 54.2);
         var rectangleArea = rectangle.GetArea();
