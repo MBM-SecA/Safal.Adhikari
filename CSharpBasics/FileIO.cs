@@ -33,5 +33,3 @@ public class FileIO
     }
 }
 
-    //Create a folder "ABC" within which create 10 subfolders
-    //Each subfolders should contain a c# file "Hello world program

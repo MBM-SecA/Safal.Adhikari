@@ -22,7 +22,7 @@ public class Program
         fileIO.LearnDirectories();
         */
 
-
+        /*
         var countriesText = File.ReadAllText("Countries.txt");
         string[] countries = countriesText.Split("\r\n");
 
@@ -32,5 +32,8 @@ public class Program
         {
             Console.WriteLine(country);
         }
+        */
+
+        
     }
 }
