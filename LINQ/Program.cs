@@ -44,15 +44,28 @@ namespace LINQ
                                  select country.Name;
 
             
-            var countriesPopulation = from population in countries
-                                      where population.Population < 100000
-                                      select population.Name;
+            var europeanCountries = from country in countries
+                                    where country.Continent == "Europe" && country.Population < 100000
+                                    select country;
                                       
                                       
+            var nonInvadedAsian = from country in countries
+                                  where country.Continent == "Asia" && country.IndependenceDay == default
+                                  select country;
 
-            foreach(var population in countriesPopulation)
+
+            Console.WriteLine("European Countries with population less than 100k");
+            foreach(var x in europeanCountries)
             {
-                Console.WriteLine(population);
+                
+                Console.WriteLine(x.Name);
+            }
+
+            Console.WriteLine("Asian Countries which were never invaded");
+            foreach(var x in nonInvadedAsian)
+            {
+               
+                Console.WriteLine(x.Name);
             }
 
 
