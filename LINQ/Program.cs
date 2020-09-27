@@ -32,48 +32,65 @@ namespace LINQ
                           where x.Length > 3 && x.ToLower().StartsWith("r")
                           select x;
 
-            /*foreach(var name in result4)
+            foreach(var name in result4)
+            {
+                Console.WriteLine(name);
+            }
+
+            //Projections
+
+            var result5 = numbers.Select(x => x * x);
+            /*foreach(var square in result5)
+            {
+                Console.WriteLine(square);
+            }*/
+
+            //to arrange numbers in ascending
+            var result6 = from num in numbers
+                          orderby num   
+                          select num;
+            
+            /*foreach(var num in result6)
+            {
+                Console.WriteLine(num);
+            }*/
+
+            /*var result7 = from name in names
+                          orderby name descending
+                          select name;
+
+            foreach(var name in result7)
             {
                 Console.WriteLine(name);
             }*/
 
-            var countries = Country.GetCountries();
+            var result7 = numbers.Take(5);
 
-            var asianCountries = from country in countries
-                                 where country.Continent == "Europe"
-                                 select country.Name;
-
-            
-            var europeanCountries = from country in countries
-                                    where country.Continent == "Europe" && country.Population < 100000
-                                    select country;
-                                      
-                                      
-            var nonInvadedAsian = from country in countries
-                                  where country.Continent == "Asia" && country.IndependenceDay == default
-                                  select country;
-
-
-            Console.WriteLine("European Countries with population less than 100k");
-            foreach(var x in europeanCountries)
+            /*foreach(var num in result7)
             {
-                
-                Console.WriteLine(x.Name);
+                Console.WriteLine(num);
+            }*/ 
+
+            //partitioning
+            var result8 = numbers.Skip(5).Take(5);
+
+            foreach(var num in result8)
+            {
+                Console.WriteLine(num);
             }
 
-            Console.WriteLine("Asian Countries which were never invaded");
-            foreach(var x in nonInvadedAsian)
-            {
-               
-                Console.WriteLine(x.Name);
-            }
+            //Quantifiers
+            var result9 = numbers.Any(x => x % 2 == 0);
+            var result10 = numbers.All(x => x % 2 == 0);
+            var result11 = numbers.Contains(34);
 
-
-
+            var result12 = Enumerable.Range(1, 1000);
+            var result13 = Enumerable.Repeat("Hello World!", 10);
             
-            //HW1: List Countries in Europe which has population less than 100k
-            //HW2: List countries in Asia which are not ever invaded.
-        
+            foreach(var num in result13)
+            {
+                Console.WriteLine(num);
+            }
         }
     }
 }
