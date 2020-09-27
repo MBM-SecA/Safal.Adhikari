@@ -40,7 +40,7 @@ namespace LINQ
             var countries = Country.GetCountries();
 
             var asianCountries = from country in countries
-                                 where country.Continent == "Asia"
+                                 where country.Continent == "Europe"
                                  select country.Name;
 
             
