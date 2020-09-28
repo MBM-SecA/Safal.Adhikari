@@ -91,6 +91,11 @@ namespace LINQ
             {
                 Console.WriteLine(num);
             }
+
+
+
+            ComplexType complexType = new ComplexType();
+            complexType.LearnRestrictions();
         }
     }
 }

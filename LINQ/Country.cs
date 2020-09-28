@@ -51,4 +51,9 @@ public class Country
 
         return countries;
     }
+
+    internal static object Any(Func<object, bool> p)
+    {
+        throw new NotImplementedException();
+    }
 }
