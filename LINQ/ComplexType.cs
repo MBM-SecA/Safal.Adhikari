@@ -49,8 +49,18 @@ public class ComplexType
         var africanCountries = countries.Any( country => country.Continent == "Africa");
 
         if( africanCountries )
-            Console.WriteLine("There is african countries in the country collection");
+        {
+            Console.WriteLine("There is african countries in the country collection \nAnd they are:");
 
+
+            var african = countries.Where( country => country.Continent == "Africa");
+
+            foreach (var country in african)
+            {
+                Console.WriteLine(country.Name);
+            }
+
+        }
         else
             Console.WriteLine("There is no any african countries in the country collection");
 
