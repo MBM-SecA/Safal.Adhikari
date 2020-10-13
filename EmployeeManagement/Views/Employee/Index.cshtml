@@ -21,14 +21,17 @@
     {
         <tr scope="row">
           <td>
-            <a href = "/employee/detail?firstName = @employee.FirstName">
-              @employee.FirstName
+            @{
+              string fn = employee.FirstName;
+            }
+            <a href ="/employee/detail?firstName=@fn">
+              @fn
             </a>
           </td>
-            <td>@employee.Surname</td>
-            <td>@employee.Address</td>
-            <td>@employee.Gender</td>
-            <td>@employee.Salary</td>
+          <td>@employee.Surname</td>
+          <td>@employee.Address</td>
+          <td>@employee.Gender</td>
+          <td>@employee.Salary</td>
         </tr>
     }
   </tbody>
