@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,10 +11,10 @@ public class EmployeeController : Controller
         return View(employees);
     }
 
-    public ActionResult Detail( string firstName)
+    public ActionResult Detail([FromQuery] Guid id)
     {
         var employees = Person.GetEmployees();
-        var employee = employees.FirstOrDefault(x => x.FirstName == firstName);
+        var employee = employees.FirstOrDefault(x => x.Id == id);
 
         return View(employee);
     }
