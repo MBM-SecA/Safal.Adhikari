@@ -4,10 +4,15 @@ using Microsoft.AspNetCore.Mvc;
 
 public class EmployeeController : Controller
 {
+    private readonly EMSContext db;
+
+    public EmployeeController(EMSContext _db)
+    {
+        db = _db;
+    }
     public ActionResult Index()
     {
-        var employees = Person.GetEmployees();
-       
+        var employees = db.People.ToList();
         return View(employees);
     }
 
@@ -25,7 +30,7 @@ public class EmployeeController : Controller
     }
 
     [HttpPost]
-    public ActionResult<string> Add([FromForm] Person person)
+    public ActionResult<string> Add(Person person)
     {
         return "Record Saved";
         
