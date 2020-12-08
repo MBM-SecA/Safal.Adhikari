@@ -22,6 +22,12 @@ public class DepartmentController : Controller
         return View();
     }
 
+    public ActionResult Detail([FromQuery]int id)
+    {
+        var department = db.Departments.Find(id);
+        return View(department);
+    }
+
     [HttpPost]
     public ActionResult Add(Department department)
     {
